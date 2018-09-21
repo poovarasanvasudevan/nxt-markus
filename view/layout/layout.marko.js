@@ -20,13 +20,13 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<noscript>Please Enable JavaSccript to render</noscript>");
+  out.w("<noscript>Please Enable JavaScript to render</noscript>");
 
   include_tag({
       _target: input.body
     }, out, __component, "38");
 
-  out.w("<script>\r\n       if('serviceWorker' in navigator) {\r\n         navigator.serviceWorker\r\n                  .register('/service-worker.js')\r\n                  .then(function() { console.log(\"Service Worker Registered\"); });\r\n       }\r\n   </script>");
+  out.w("<script>\r\n       if('serviceWorker' in navigator) {\r\n         navigator.serviceWorker\r\n                  .register('/service-worker.js')\r\n                  .then(function() { console.log(\"Service Worker Registered\"); });\r\n       }\r\n    </script>");
 
   console.log('hello')
 
