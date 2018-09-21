@@ -48,17 +48,17 @@
   </head>
   <body>
     <noscript>
-        Please Enable JavaSccript to render
+        Please Enable JavaScript to render
     </noscript>
     <include(input.body)/>
-
 
    <script>
        if('serviceWorker' in navigator) {
          navigator.serviceWorker
-                  .register('/static/js/sw.js')
+                  .register('/service-worker.js')
                   .then(function() { console.log("Service Worker Registered"); });
        }
    </script>
+   $ console.log('hello')
   </body>
 </html>

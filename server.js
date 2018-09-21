@@ -34,8 +34,10 @@ nextObj.prepare()
         app.use(helmet())
         app.use('/', require('./routes/page/index'))
         app.use('/api/v1', [JsonRequestMiddleware], apiRouter)
-
-
+        app.get('/service-worker.js',(req,res) => {
+            const filePath = path.join(__dirname, '/static/js/sw.js')
+            res.sendFile(filePath)
+        })
         app.get('/a', (req, res) => {
             res.marko(require('./view/index.marko'), {
                 name: 'Frank',

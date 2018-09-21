@@ -10,6 +10,8 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
     layout_template = marko_loadTemplate(require.resolve("./layout/layout.marko")),
     marko_helpers = require("marko/src/runtime/html/helpers"),
     marko_escapeXml = marko_helpers.x,
+    marko_forEach = marko_helpers.f,
+    marko_escapeXmlAttr = marko_helpers.xa,
     hasRenderBodyKey = Symbol.for("hasRenderBody"),
     marko_loadTag = marko_helpers.t,
     include_tag = marko_loadTag(require("marko/src/taglibs/core/include-tag"));
@@ -23,7 +25,27 @@ function render(input, out, __component, component, state) {
           renderBody: function renderBody(out) {
             out.w("You have " +
               marko_escapeXml(data.count) +
-              " new messages!");
+              " new messages! ");
+
+            if (data.colors && data.colors.length) {
+              out.w("<ul>");
+
+              var for__3 = 0;
+
+              marko_forEach(data.colors, function(color) {
+                var keyscope__4 = "[" + ((for__3++) + "]");
+
+                out.w("<li style=\"color: " +
+                  marko_escapeXmlAttr(color) +
+                  "\">" +
+                  marko_escapeXml(color) +
+                  "</li>");
+              });
+
+              out.w("</ul>");
+            } else {
+              out.w("<div>No colors!</div>");
+            }
           }
         },
       [hasRenderBodyKey]: true

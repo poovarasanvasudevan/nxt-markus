@@ -26,7 +26,9 @@ function render(input, out, __component, component, state) {
       _target: input.body
     }, out, __component, "38");
 
-  out.w("<script>\r\n       if('serviceWorker' in navigator) {\r\n         navigator.serviceWorker\r\n                  .register('/static/js/sw.js')\r\n                  .then(function() { console.log(\"Service Worker Registered\"); });\r\n       }\r\n   </script>");
+  out.w("<script>\r\n       if('serviceWorker' in navigator) {\r\n         navigator.serviceWorker\r\n                  .register('/service-worker.js')\r\n                  .then(function() { console.log(\"Service Worker Registered\"); });\r\n       }\r\n   </script>");
+
+  console.log('hello')
 
   init_components_tag({}, out);
 
