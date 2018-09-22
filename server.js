@@ -8,7 +8,7 @@ const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const nextObj = next({dev})
 const handle = nextObj.getRequestHandler()
-
+const sassMiddleware = require('node-sass-middleware');
 const markoExpress = require('marko/express');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -28,6 +28,14 @@ const JsonRequestMiddleware = require('./middleware/JsonRequestMiddleware')
 nextObj.prepare()
     .then(() => {
         const app = express()
+        app.use(sassMiddleware({
+            src: path.join(__dirname , 'static','dep'),
+            dest: path.join(__dirname, 'static' , 'css'),
+            debug: true,
+            indentedSyntax: true,
+            outputStyle: 'compressed',
+            prefix:  '/css'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+        }));
         app.use('/static', express.static(path.join(__dirname, 'static')))
         app.use(markoExpress());
 

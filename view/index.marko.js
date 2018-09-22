@@ -4,7 +4,7 @@
 var marko_template = module.exports = require("marko/src/html").t(__filename),
     marko_component = {
         onCreate: function() {
-          console.log("hello world comp");
+          console.log("Hello WOrld");
         }
       },
     marko_componentType = "/Nxt$1.0.0/view/index.marko",
@@ -28,17 +28,17 @@ function render(input, out, __component, component, state) {
       _target: layout_template,
       body: {
           renderBody: function renderBody(out) {
-            out.w("You have " +
+            out.w("<nav class=\"navbar has-shadow\" role=\"navigation\" aria-label=\"main navigation\"><div class=\"navbar-brand\"><a class=\"navbar-item\" href=\"https://bulma.io\"><img src=\"https://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\"></a><a role=\"button\" class=\"navbar-burger\" aria-label=\"menu\" aria-expanded=\"false\"><span aria-hidden=\"true\"></span><span aria-hidden=\"true\"></span><span aria-hidden=\"true\"></span></a></div></nav> You have " +
               marko_escapeXml(data.count) +
               " new messages! ");
 
             if (data.colors && data.colors.length) {
               out.w("<ul>");
 
-              var for__3 = 0;
+              var for__11 = 0;
 
               marko_forEach(data.colors, function(color) {
-                var keyscope__4 = "[" + ((for__3++) + "]");
+                var keyscope__12 = "[" + ((for__11++) + "]");
 
                 out.w("<li style=\"color: " +
                   marko_escapeXmlAttr(color) +
