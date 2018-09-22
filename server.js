@@ -34,7 +34,7 @@ nextObj.prepare()
             debug: true,
             indentedSyntax: true,
             outputStyle: 'compressed',
-            prefix:  '/css'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+            prefix:  '/static/css'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
         }));
         app.use('/static', express.static(path.join(__dirname, 'static')))
         app.use(markoExpress());

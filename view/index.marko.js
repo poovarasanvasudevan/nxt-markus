@@ -28,17 +28,17 @@ function render(input, out, __component, component, state) {
       _target: layout_template,
       body: {
           renderBody: function renderBody(out) {
-            out.w("<nav class=\"navbar has-shadow\" role=\"navigation\" aria-label=\"main navigation\"><div class=\"navbar-brand\"><a class=\"navbar-item\" href=\"https://bulma.io\"><img src=\"https://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\"></a><a role=\"button\" class=\"navbar-burger\" aria-label=\"menu\" aria-expanded=\"false\"><span aria-hidden=\"true\"></span><span aria-hidden=\"true\"></span><span aria-hidden=\"true\"></span></a></div></nav> You have " +
+            out.w("<nav class=\"navbar has-shadow\" role=\"navigation\" aria-label=\"main navigation\"><div class=\"navbar-brand\"><a class=\"navbar-item\" href=\"https://bulma.io\"><img src=\"https://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\"></a><a role=\"button\" class=\"navbar-burger\" aria-label=\"menu\" aria-expanded=\"false\"><span aria-hidden=\"true\"></span><span aria-hidden=\"true\"></span><span aria-hidden=\"true\"></span></a></div><div class=\"navbar-end\"><div class=\"navbar-item\"><div class=\"field is-grouped\"><p class=\"control\"><a class=\"is-info button\">Signup</a></p><p class=\"control\"><a class=\"button is-primary\">Login</a></p></div></div></div></nav> You have " +
               marko_escapeXml(data.count) +
               " new messages! ");
 
             if (data.colors && data.colors.length) {
               out.w("<ul>");
 
-              var for__11 = 0;
+              var for__18 = 0;
 
               marko_forEach(data.colors, function(color) {
-                var keyscope__12 = "[" + ((for__11++) + "]");
+                var keyscope__19 = "[" + ((for__18++) + "]");
 
                 out.w("<li style=\"color: " +
                   marko_escapeXmlAttr(color) +
