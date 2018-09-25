@@ -45,6 +45,14 @@ nextObj.prepare()
             });
         })
 
+        app.get('/test', (req, res) => {
+            res.marko(require('./view/pages/testpage.marko'), {
+                name: 'Frank',
+                count: 30,
+                colors: ['red', 'green', 'blue']
+            });
+        })
+
         app.get('/b', (req, res) => {
             return nextObj.render(req, res, '/a', req.query)
         })
