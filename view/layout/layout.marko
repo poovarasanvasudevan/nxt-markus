@@ -46,14 +46,15 @@
     <meta name="theme-color" content="#db5945">
     <link rel="manifest" href="/static/manifest.json">
 
-    <link rel="stylesheet" href="/static/css/bulma.css" />
+    <link rel="stylesheet" href="/static/css/atlas.css" />
+    <link rel="stylesheet" href="/static/css/bundle.css" />
   </head>
   <body>
     <noscript>
         Please Enable JavaScript to render
     </noscript>
     <include(input.body)/>
-
+    <script src="/static/js/bundle.js"></script>
     <script>
        if('serviceWorker' in navigator) {
          navigator.serviceWorker

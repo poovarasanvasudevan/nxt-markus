@@ -11,19 +11,10 @@ const handle = nextObj.getRequestHandler()
 const sassMiddleware = require('node-sass-middleware');
 const markoExpress = require('marko/express');
 
-const isProduction = process.env.NODE_ENV === 'production';
 const apiRouter = require('./routes/api/index')
 const JsonRequestMiddleware = require('./middleware/JsonRequestMiddleware')
 
-// require('lasso').configure({
-//     plugins: [
-//         'lasso-marko' // Allow Marko templates to be compiled and transported to the browser
-//     ],
-//     outputDir: __dirname + '/static', // Place all generated JS/CSS/etc. files into the "static" dir
-//     bundlingEnabled: isProduction, // Only enable bundling in production
-//     minify: isProduction, // Only minify JS and CSS code in production
-//     fingerprintsEnabled: isProduction, // Only add fingerprints to URLs in production
-// });
+var isProduction = process.env.NODE_ENV === 'production';
 
 nextObj.prepare()
     .then(() => {
@@ -47,7 +38,7 @@ nextObj.prepare()
             res.sendFile(filePath)
         })
         app.get('/a', (req, res) => {
-            res.marko(require('./view/index.marko'), {
+            res.marko(require('./view/pages/landing.marko'), {
                 name: 'Frank',
                 count: 30,
                 colors: ['red', 'green', 'blue']

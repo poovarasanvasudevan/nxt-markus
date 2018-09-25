@@ -1,0 +1,22 @@
+class {
+    onCreate() { console.log('created') }
+    onMount() { console.log('mount') }
+    logthis() { console.log('test') }
+}
+
+<div once-load('logthis') class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-atl-navigation-column stuck">
+    <div.lia-quilt-column-alley.lia-quilt-column-alley-single>
+        <div.atl-navigation-wrapper>
+            <div.atl-navigation>
+                <div.atl-navigation__masthead style="margin-bottom: 0px;">
+                    <a.atl-community-logo href="/"  data-ga-category="Utility Navigation Interactions"
+                       data-ga-action="Atlassian Community Logo">
+                       <app-logo />
+                    </a>
+                </div>
+                <a.adg-button--cta-yellow.adg-u-small-inline-block#atlcommNavLink-register> Sign up </a>
+                <button#login-btn.adg-button--subtle on-click('logthis')> Log in </button>
+            </div>
+        </div>
+    </div>
+</div>
